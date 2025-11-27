@@ -1,34 +1,33 @@
 from .base_collector import BaseCollector
 import random
-from datetime import datetime
+from logger import logger
 
 class ServiceProviderCollector(BaseCollector):
-    def __init__(self):
-        super().__init__("Service Providers")
+    def __init__(self, db_session=None):
+        super().__init__("Service Providers", db_session)
 
-    def collect(self, num_samples=50):
-        """
-        Simulates collection of service provider data (Plumbers, Electricians, etc.).
-        """
-        print(f"Starting collection for {self.niche_name}...")
+    def collect(self, num_samples=10):
+        logger.info(f"Starting Service Provider collection... Target: {num_samples}")
         
-        services = ["Plumber", "Electrician", "Handyman", "Locksmith", "Painter"]
-        areas = ["Randburg", "Midrand", "Centurion", "Bellville", "Umhlanga"]
+        services = ["Plumber", "Electrician", "Locksmith", "Mechanic"]
         
         for i in range(num_samples):
-            # self.random_delay(0.1, 0.5)
+            self.random_delay(0.5, 1.5)
             
-            provider = {
-                "name": f"Provider {i+1}",
-                "service": random.choice(services),
-                "area": random.choice(areas),
-                "phone": f"06{random.randint(2, 9)} {random.randint(100, 999)} {random.randint(1000, 9999)}",
-                "email": f"info@provider{i+1}.co.za",
-                "rating": round(random.uniform(3.5, 5.0), 1),
-                "reviews_count": random.randint(5, 100),
-                "verified": True,
-                "collected_at": datetime.now().isoformat()
+            service = random.choice(services)
+            
+            lead = {
+                "first_name": f"Pro{i}",
+                "last_name": f"Fixit{i}",
+                "email": f"contact@{service.lower()}{i}.co.za",
+                "phone": f"+278{random.randint(10000000, 99999999)}",
+                "company": f"{service} Pros {i}",
+                "role": service,
+                "source": "Bark (Simulated)",
+                "url": f"https://www.bark.com/en/za/company/{i}",
+                "location": "Cape Town"
             }
-            self.data.append(provider)
             
-        print(f"Collected {len(self.data)} items.")
+            self.save_lead(lead)
+            
+        logger.info(f"Service Provider collection complete. Collected {len(self.data)} leads.")

@@ -1,34 +1,33 @@
 from .base_collector import BaseCollector
 import random
-from datetime import datetime
+from logger import logger
 
 class TutorCollector(BaseCollector):
-    def __init__(self):
-        super().__init__("Tutors")
+    def __init__(self, db_session=None):
+        super().__init__("Tutors", db_session)
 
-    def collect(self, num_samples=50):
-        """
-        Simulates collection of tutor data.
-        """
-        print(f"Starting collection for {self.niche_name}...")
+    def collect(self, num_samples=10):
+        logger.info(f"Starting Tutor collection... Target: {num_samples}")
         
-        subjects = ["Math", "Science", "English", "Accounting", "Physics"]
-        areas = ["Sandton", "Cape Town", "Durban", "Pretoria", "Johannesburg"]
+        subjects = ["Math", "Science", "English", "History", "Coding"]
         
         for i in range(num_samples):
-            # self.random_delay(0.1, 0.5)
+            self.random_delay(0.5, 1.5)
             
-            tutor = {
-                "name": f"Tutor {i+1}",
-                "subject": random.choice(subjects),
-                "area": random.choice(areas),
-                "phone": f"07{random.randint(2, 9)} {random.randint(100, 999)} {random.randint(1000, 9999)}",
-                "email": f"tutor{i+1}@example.com",
-                "hourly_rate": random.randint(150, 400),
-                "experience_years": random.randint(1, 15),
-                "verified": True,
-                "collected_at": datetime.now().isoformat()
+            subject = random.choice(subjects)
+            
+            lead = {
+                "first_name": f"Tutor{i}",
+                "last_name": f"Smith{i}",
+                "email": f"tutor{i}@teachme.co.za",
+                "phone": f"+278{random.randint(10000000, 99999999)}",
+                "company": "Private Tutor",
+                "role": f"{subject} Tutor",
+                "source": "Superprof (Simulated)",
+                "url": f"https://www.superprof.co.za/tutor/{i}",
+                "location": "Online"
             }
-            self.data.append(tutor)
             
-        print(f"Collected {len(self.data)} items.")
+            self.save_lead(lead)
+            
+        logger.info(f"Tutor collection complete. Collected {len(self.data)} leads.")

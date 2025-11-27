@@ -1,9 +1,9 @@
 .env
 __pycache__
 
-design_1.md
-design_2.md
-design_3.md
+# design_1.md
+# design_2.md
+# design_3.md
 
 reports/*
 src/reports/*

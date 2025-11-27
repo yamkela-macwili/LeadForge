@@ -12,3 +12,4 @@ seaborn
 numpy
 python-dotenv
 schedule
+SQLAlchemy

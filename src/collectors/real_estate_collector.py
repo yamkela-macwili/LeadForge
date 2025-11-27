@@ -1,38 +1,36 @@
 from .base_collector import BaseCollector
 import random
-from datetime import datetime
+from logger import logger
 
 class RealEstateCollector(BaseCollector):
-    def __init__(self):
-        super().__init__("Real Estate")
+    def __init__(self, db_session=None):
+        super().__init__("Real Estate", db_session)
 
-    def collect(self, num_samples=50):
-        """
-        Simulates collection of real estate agent data.
-        In a real scenario, this would use requests/BeautifulSoup to scrape a site.
-        For this implementation, we will generate realistic mock data to ensure
-        the pipeline works immediately without external dependencies/blocking.
-        """
-        print(f"Starting collection for {self.niche_name}...")
+    def collect(self, num_samples=10):
+        logger.info(f"Starting Real Estate collection... Target: {num_samples}")
         
-        areas = ["Sandton", "Cape Town City Bowl", "Umhlanga", "Pretoria East", "Durban North"]
-        agencies = ["Pam Golding", "Re/Max", "Seeff", "Rawson", "Chas Everitt"]
+        # Simulated data sources
+        agencies = ["Pam Golding", "Seeff", "Rawson", "Remax"]
+        locations = ["Cape Town", "Johannesburg", "Durban", "Pretoria"]
         
         for i in range(num_samples):
-            # Simulate scraping delay
-            # self.random_delay(0.1, 0.5) 
+            self.random_delay(0.5, 1.5)
             
-            agent = {
-                "name": f"Agent {i+1}",
-                "agency": random.choice(agencies),
-                "area": random.choice(areas),
-                "phone": f"08{random.randint(2, 9)} {random.randint(100, 999)} {random.randint(1000, 9999)}",
-                "email": f"agent{i+1}@{random.choice(agencies).lower().replace(' ', '')}.co.za",
-                "listings_count": random.randint(5, 50),
-                "verified": True,
-                "collected_at": datetime.now().isoformat()
+            agency = random.choice(agencies)
+            location = random.choice(locations)
+            
+            lead = {
+                "first_name": f"Agent{i}",
+                "last_name": f"Doe{i}",
+                "email": f"agent{i}@{agency.lower().replace(' ', '')}.co.za",
+                "phone": f"+278{random.randint(10000000, 99999999)}",
+                "company": agency,
+                "role": "Property Practitioner",
+                "source": "Property24 (Simulated)",
+                "url": f"https://www.property24.com/agent/{i}",
+                "location": location
             }
-            self.data.append(agent)
             
-        print(f"Collected {len(self.data)} items.")
-
+            self.save_lead(lead)
+            
+        logger.info(f"Real Estate collection complete. Collected {len(self.data)} leads.")
