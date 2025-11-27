@@ -1,0 +1,14 @@
+requests
+beautifulsoup4
+pandas
+selenium
+scrapy
+fpdf2
+openpyxl
+xlsxwriter
+reportlab
+matplotlib
+seaborn
+numpy
+python-dotenv
+schedule
