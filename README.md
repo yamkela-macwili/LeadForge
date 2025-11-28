@@ -438,4 +438,4 @@ For issues, questions, or contributions:
 
 ---
 
-**Built with ❤️ using FastAPI, Streamlit, and Python**
+**Built with  using FastAPI, Streamlit, and Python**
