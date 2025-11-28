@@ -6,13 +6,13 @@ class TutorCollector(BaseCollector):
     def __init__(self, db_session=None):
         super().__init__("Tutors", db_session)
 
-    async def collect(self, num_samples=10):
+    def collect(self, num_samples=10):
         logger.info(f"Starting Tutor collection... Target: {num_samples}")
         
         subjects = ["Math", "Science", "English", "History", "Coding"]
         
         for i in range(num_samples):
-            await self.random_delay(0.5, 1.5)
+            self.random_delay(0.5, 1.5)
             
             subject = random.choice(subjects)
             

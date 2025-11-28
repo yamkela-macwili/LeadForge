@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - LeadForge{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-chart-line"></i> Dashboard Overview</h1>
+    <div class="user-badge">
+        <i class="fas fa-user-circle"></i>
+        <span>{{ user.email }}</span>
+        <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
+    </div>
+</div>
+
+<div class="stats-grid">
+    {% for niche, count in stats.items() %}
+    <div class="stat-card">
+        <div class="stat-icon">
+            <i
+                class="fas fa-{% if 'Real Estate' in niche %}home{% elif 'Tutor' in niche %}graduation-cap{% else %}briefcase{% endif %}"></i>
+        </div>
+        <div class="stat-info">
+            <h3>{{ count }}</h3>
+            <p>{{ niche }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="chart-container">
+    <h2>Leads Distribution</h2>
+    <canvas id="leadsChart"></canvas>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const statsData = {{ stats| tojson }};
+
+    const ctx = document.getElementById('leadsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(statsData),
+            datasets: [{
+                label: 'Number of Leads',
+                data: Object.values(statsData),
+                backgroundColor: [
+                    'rgba(139, 92, 246, 0.8)',
+                    'rgba(236, 72, 153, 0.8)',
+                    'rgba(34, 197, 94, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(139, 92, 246, 1)',
+                    'rgba(236, 72, 153, 1)',
+                    'rgba(34, 197, 94, 1)'
+                ],
+                borderWidth: 2,
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#e5e7eb',
+                        font: { size: 14 }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#9ca3af' },
+                    grid: { color: 'rgba(75, 85, 99, 0.2)' }
+                },
+                x: {
+                    ticks: { color: '#9ca3af' },
+                    grid: { color: 'rgba(75, 85, 99, 0.2)' }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

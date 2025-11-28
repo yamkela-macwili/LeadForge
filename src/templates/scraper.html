@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Scraper - LeadForge{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-cog"></i> Scraper Control</h1>
+    <div class="user-badge">
+        <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
+    </div>
+</div>
+
+{% if user.subscription_tier == 'Free' %}
+<div class="upgrade-notice">
+    <i class="fas fa-lock"></i>
+    <div>
+        <h3>Scraping Not Available</h3>
+        <p>Upgrade to Pro or Enterprise to unlock scraping capabilities</p>
+    </div>
+</div>
+{% endif %}
+
+<div class="scraper-grid">
+    <div class="scraper-card">
+        <div class="scraper-icon">
+            <i class="fas fa-home"></i>
+        </div>
+        <h3>Real Estate</h3>
+        <p>Scrape real estate agents and property practitioners</p>
+        <button onclick="triggerScrape('Real Estate')" class="btn btn-primary" {% if user.subscription_tier=='Free'
+            %}disabled{% endif %}>
+            <i class="fas fa-play"></i> Start Scraping
+        </button>
+    </div>
+
+    <div class="scraper-card">
+        <div class="scraper-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h3>Tutors</h3>
+        <p>Scrape tutors and educational service providers</p>
+        <button onclick="triggerScrape('Tutors')" class="btn btn-primary" {% if user.subscription_tier=='Free'
+            %}disabled{% endif %}>
+            <i class="fas fa-play"></i> Start Scraping
+        </button>
+    </div>
+
+    <div class="scraper-card">
+        <div class="scraper-icon">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <h3>Service Providers</h3>
+        <p>Scrape service providers (plumbers, electricians, etc.)</p>
+        <button onclick="triggerScrape('Service Providers')" class="btn btn-primary" {% if
+            user.subscription_tier=='Free' %}disabled{% endif %}>
+            <i class="fas fa-play"></i> Start Scraping
+        </button>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function triggerScrape(niche) {
+        const nicheParam = niche.replace(' ', '%20');
+        showToast('Starting scraping for ' + niche + '...', 'info');
+
+        fetch('/api/scrape/' + nicheParam, {
+            method: 'POST',
+            credentials: 'include'
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showToast('Scraping completed for ' + niche + '!', 'success');
+                } else {
+                    showToast('Scraping started for ' + niche, 'success');
+                }
+            })
+            .catch(error => {
+                showToast('Error: ' + error.message, 'error');
+            });
+    }
+
+    function showToast(message, type) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.className = 'toast toast-' + type + ' show';
+        setTimeout(() => {
+            toast.className = 'toast';
+        }, 3000);
+    }
+</script>
+{% endblock %}

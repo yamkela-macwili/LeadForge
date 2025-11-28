@@ -24,7 +24,7 @@ def login(email, password):
     """Authenticate user and get JWT token."""
     try:
         response = requests.post(
-            f"{API_URL}/token",
+            f"{API_URL}/api/auth/login",
             data={"username": email, "password": password},
             headers={"Content-Type": "application/x-www-form-urlencoded"}
         )
@@ -52,7 +52,7 @@ def get_headers():
 
 def fetch_stats():
     try:
-        response = requests.get(f"{API_URL}/stats", headers=get_headers())
+        response = requests.get(f"{API_URL}/api/stats", headers=get_headers())
         if response.status_code == 200:
             return response.json()
         elif response.status_code == 401:
@@ -64,7 +64,7 @@ def fetch_stats():
 
 def trigger_scrape(niche):
     try:
-        response = requests.post(f"{API_URL}/scrape/{niche}", headers=get_headers())
+        response = requests.post(f"{API_URL}/api/scrape/{niche}", headers=get_headers())
         if response.status_code == 200:
             st.success(f"Scraping started for {niche}!")
         elif response.status_code == 403:

@@ -2,7 +2,7 @@
 
 **A Production-Ready SaaS Platform for Automated Lead Generation**
 
-LeadForge is a comprehensive lead generation system that automates the collection, enrichment, and management of business leads across multiple niches. Built with modern Python technologies, it features a RESTful API, real-time dashboard, and subscription-based access control.
+LeadForge is a comprehensive lead generation system that automates the collection, enrichment, and management of business leads across multiple niches. Built with Flask and modern Python technologies, it features a RESTful API, real-time dashboard, and subscription-based access control.
 
 ---
 
@@ -11,7 +11,7 @@ LeadForge is a comprehensive lead generation system that automates the collectio
 ### Core Capabilities
 - **Automated Lead Scraping**: Collect leads from multiple sources across different niches (Real Estate, Tutors, Service Providers)
 - **Data Enrichment**: Enhance lead data with business ratings, reviews, and verification status
-- **RESTful API**: FastAPI-powered backend with JWT authentication
+- **RESTful API**: Flask-powered backend with JWT authentication
 - **Interactive Dashboard**: Streamlit-based UI for visualization and control
 - **Subscription Tiers**: Free, Pro, and Enterprise plans with enforced limits
 - **Async Architecture**: Non-blocking scraping operations for better performance
@@ -81,7 +81,7 @@ You need to run **two services** simultaneously:
 
 #### Terminal 1: API Server
 ```bash
-PYTHONPATH=src python -m uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+PYTHONPATH=src FLASK_APP=app.py flask run --host=0.0.0.0 --port=8000
 ```
 
 #### Terminal 2: Dashboard
@@ -119,7 +119,7 @@ PYTHONPATH=src streamlit run src/dashboard.py
 
 #### Get Authentication Token
 ```bash
-curl -X POST "http://localhost:8000/token" \
+curl -X POST "http://localhost:8000/api/auth/login" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "username=admin@leadforge.com&password=admin"
 ```
@@ -138,14 +138,14 @@ Response:
 TOKEN="your_token_here"
 
 # Get statistics
-curl -H "Authorization: Bearer $TOKEN" http://localhost:8000/stats
+curl -H "Authorization: Bearer $TOKEN" http://localhost:8000/api/stats
 
 # Get leads
-curl -H "Authorization: Bearer $TOKEN" "http://localhost:8000/leads?limit=10"
+curl -H "Authorization: Bearer $TOKEN" "http://localhost:8000/api/leads?limit=10"
 
 # Trigger scraping (Enterprise/Pro only)
 curl -X POST -H "Authorization: Bearer $TOKEN" \
-  "http://localhost:8000/scrape/Real%20Estate"
+  "http://localhost:8000/api/scrape/Real%20Estate"
 ```
 
 ---
@@ -155,33 +155,33 @@ curl -X POST -H "Authorization: Bearer $TOKEN" \
 ### Endpoints
 
 #### Authentication
-- `POST /token` - Login and get JWT token
+- `POST /api/auth/login` - Login and get JWT token
   - **Body**: `username` (email), `password`
   - **Returns**: JWT access token
 
 #### Leads Management
-- `GET /leads` - Retrieve leads
+- `GET /api/leads` - Retrieve leads
   - **Auth**: Required
   - **Query Params**: `niche` (optional), `limit` (default: 100)
   - **Free Tier Limit**: Max 5 leads
   - **Returns**: Array of lead objects
 
-- `GET /stats` - Get lead statistics
+- `GET /api/stats` - Get lead statistics
   - **Auth**: Required
   - **Returns**: Lead counts per niche
 
 #### Scraping
-- `POST /scrape/{niche}` - Trigger scraping job
+- `POST /api/scrape/{niche}` - Trigger scraping job
   - **Auth**: Required (Pro/Enterprise only)
   - **Path Param**: `niche` (real_estate, tutors, service_providers)
   - **Returns**: Job status
 
 #### Health
 - `GET /` - API welcome message
-- `GET /health` - Health check endpoint
+- `GET /api/health` - Health check endpoint
 
 ### Interactive API Docs
-Visit http://localhost:8000/docs for Swagger UI with interactive API testing.
+Flask does not provide auto-generated API docs. For interactive testing, use tools like Postman or curl.
 
 ---
 
@@ -237,11 +237,10 @@ Visit http://localhost:8000/docs for Swagger UI with interactive API testing.
 ## 🏗️ Architecture
 
 ### Tech Stack
-- **Backend**: FastAPI (async Python web framework)
+- **Backend**: Flask (Python web framework)
 - **Frontend**: Streamlit (Python dashboard framework)
 - **Database**: SQLAlchemy ORM + SQLite (PostgreSQL-ready)
-- **Authentication**: JWT tokens + Bcrypt hashing
-- **Async**: asyncio for non-blocking operations
+- **Authentication**: Flask-JWT-Extended + Bcrypt hashing
 - **Data Processing**: Pandas for data manipulation
 - **Visualization**: Plotly for charts
 
@@ -249,12 +248,18 @@ Visit http://localhost:8000/docs for Swagger UI with interactive API testing.
 ```
 LeadForge/
 ├── src/
-│   ├── api.py                 # FastAPI application
+│   ├── app.py                 # Flask application
+│   ├── config.py              # Configuration
 │   ├── auth.py                # Authentication logic
 │   ├── database.py            # Database models & setup
 │   ├── logger.py              # Logging configuration
 │   ├── dashboard.py           # Streamlit dashboard
 │   ├── main.py                # CLI entry point
+│   ├── routes/                # API routes
+│   │   ├── auth_routes.py
+│   │   ├── lead_routes.py
+│   │   ├── scraper_routes.py
+│   │   └── health_routes.py
 │   ├── collectors/            # Scraping modules
 │   │   ├── base_collector.py
 │   │   ├── real_estate_collector.py
@@ -292,7 +297,7 @@ LeadForge/
 PYTHONPATH=src python test_enrichment.py
 
 # Test API endpoints
-curl http://localhost:8000/health
+curl http://localhost:8000/api/health
 ```
 
 ### Adding a New Niche
@@ -310,7 +315,7 @@ class NewNicheCollector(BaseCollector):
         pass
 ```
 
-2. **Register in API** (`src/api.py`):
+2. **Register in API** (`src/routes/scraper_routes.py`):
 ```python
 from collectors.new_niche_collector import NewNicheCollector
 
@@ -367,7 +372,7 @@ docker-compose down
 **Problem**: API server not running  
 **Solution**: Start API server in separate terminal
 ```bash
-PYTHONPATH=src python -m uvicorn api:app --reload
+PYTHONPATH=src FLASK_APP=app.py flask run --host=0.0.0.0 --port=8000
 ```
 
 #### "Invalid credentials" on Login

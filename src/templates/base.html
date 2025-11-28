@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}LeadForge{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    {% if request.endpoint != 'ui.login' %}
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-rocket"></i>
+                <span>LeadForge</span>
+            </div>
+            <div class="nav-links">
+                <a href="{{ url_for('ui.dashboard') }}"
+                    class="{% if request.endpoint == 'ui.dashboard' %}active{% endif %}">
+                    <i class="fas fa-chart-line"></i> Dashboard
+                </a>
+                <a href="{{ url_for('ui.leads') }}" class="{% if request.endpoint == 'ui.leads' %}active{% endif %}">
+                    <i class="fas fa-users"></i> Leads
+                </a>
+                <a href="{{ url_for('ui.scraper') }}"
+                    class="{% if request.endpoint == 'ui.scraper' %}active{% endif %}">
+                    <i class="fas fa-cog"></i> Scraper
+                </a>
+                <a href="{{ url_for('ui.logs') }}" class="{% if request.endpoint == 'ui.logs' %}active{% endif %}">
+                    <i class="fas fa-file-alt"></i> Logs
+                </a>
+                <a href="{{ url_for('ui.logout') }}" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">
+                <i
+                    class="fas fa-{% if category == 'success' %}check-circle{% elif category == 'error' %}exclamation-circle{% else %}info-circle{% endif %}"></i>
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

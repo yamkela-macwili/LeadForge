@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Logs - LeadForge{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-file-alt"></i> System Logs</h1>
+    <div class="user-badge">
+        <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
+    </div>
+</div>
+
+<div class="logs-container">
+    <div class="logs-header">
+        <h3>Last 100 Log Entries</h3>
+        <button onclick="location.reload()" class="btn btn-primary">
+            <i class="fas fa-sync-alt"></i> Refresh
+        </button>
+    </div>
+    <pre class="logs-content">{{ logs }}</pre>
+</div>
+{% endblock %}

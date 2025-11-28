@@ -419,3 +419,47 @@
 2025-11-28 10:05:08,141 - LeadForge - INFO - Background task for Real Estate completed
 2025-11-28 10:08:57,989 - LeadForge - INFO - Database initialized and default admin created
 2025-11-28 10:19:41,408 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:39:22,482 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:42:28,429 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:42:29,898 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:42:29,901 - LeadForge - INFO - Flask application initialized
+2025-11-28 10:42:58,410 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:42:58,411 - LeadForge - INFO - Flask application initialized
+2025-11-28 10:43:38,770 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:43:38,772 - LeadForge - INFO - Flask application initialized
+2025-11-28 10:45:40,906 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:45:40,909 - LeadForge - INFO - Flask application initialized
+2025-11-28 10:45:41,546 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:45:41,548 - LeadForge - INFO - Flask application initialized
+2025-11-28 10:53:21,972 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:53:21,975 - LeadForge - INFO - Flask application initialized
+2025-11-28 11:07:16,939 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 11:07:16,943 - LeadForge - INFO - Flask application initialized
+2025-11-28 11:09:31,519 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 11:09:31,522 - LeadForge - INFO - Flask application initialized
+2025-11-28 11:09:32,238 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 11:09:32,241 - LeadForge - INFO - Flask application initialized
+2025-11-28 11:12:18,191 - LeadForge - INFO - Starting scraping for Real Estate
+2025-11-28 11:12:18,191 - LeadForge - INFO - Starting Real Estate collection... Target: 20
+2025-11-28 11:12:19,676 - LeadForge - INFO - Saved new lead: agent0@seeff.co.za
+2025-11-28 11:12:20,318 - LeadForge - INFO - Lead already exists: agent1@pamgolding.co.za. Updating...
+2025-11-28 11:12:21,009 - LeadForge - INFO - Saved new lead: agent2@rawson.co.za
+2025-11-28 11:12:22,187 - LeadForge - INFO - Lead already exists: agent3@remax.co.za. Updating...
+2025-11-28 11:12:22,786 - LeadForge - INFO - Saved new lead: agent4@remax.co.za
+2025-11-28 11:12:23,720 - LeadForge - INFO - Saved new lead: agent5@rawson.co.za
+2025-11-28 11:12:24,703 - LeadForge - INFO - Saved new lead: agent6@rawson.co.za
+2025-11-28 11:12:25,925 - LeadForge - INFO - Saved new lead: agent7@seeff.co.za
+2025-11-28 11:12:26,791 - LeadForge - INFO - Saved new lead: agent8@rawson.co.za
+2025-11-28 11:12:27,296 - LeadForge - INFO - Lead already exists: agent9@pamgolding.co.za. Updating...
+2025-11-28 11:12:28,633 - LeadForge - INFO - Lead already exists: agent10@rawson.co.za. Updating...
+2025-11-28 11:12:29,869 - LeadForge - INFO - Saved new lead: agent11@remax.co.za
+2025-11-28 11:12:31,264 - LeadForge - INFO - Lead already exists: agent12@rawson.co.za. Updating...
+2025-11-28 11:12:32,293 - LeadForge - INFO - Saved new lead: agent13@seeff.co.za
+2025-11-28 11:12:33,187 - LeadForge - INFO - Saved new lead: agent14@remax.co.za
+2025-11-28 11:12:34,654 - LeadForge - INFO - Saved new lead: agent15@pamgolding.co.za
+2025-11-28 11:12:35,431 - LeadForge - INFO - Saved new lead: agent16@remax.co.za
+2025-11-28 11:12:36,297 - LeadForge - INFO - Saved new lead: agent17@pamgolding.co.za
+2025-11-28 11:12:37,039 - LeadForge - INFO - Lead already exists: agent18@pamgolding.co.za. Updating...
+2025-11-28 11:12:37,764 - LeadForge - INFO - Saved new lead: agent19@pamgolding.co.za
+2025-11-28 11:12:37,765 - LeadForge - INFO - Real Estate collection complete. Collected 14 leads.
+2025-11-28 11:12:37,765 - LeadForge - INFO - Scraping completed for Real Estate

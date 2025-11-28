@@ -6,7 +6,7 @@ class RealEstateCollector(BaseCollector):
     def __init__(self, db_session=None):
         super().__init__("Real Estate", db_session)
 
-    async def collect(self, num_samples=10):
+    def collect(self, num_samples=10):
         logger.info(f"Starting Real Estate collection... Target: {num_samples}")
         
         # Simulated data sources
@@ -14,7 +14,7 @@ class RealEstateCollector(BaseCollector):
         locations = ["Cape Town", "Johannesburg", "Durban", "Pretoria"]
         
         for i in range(num_samples):
-            await self.random_delay(0.5, 1.5)
+            self.random_delay(0.5, 1.5)
             
             agency = random.choice(agencies)
             location = random.choice(locations)

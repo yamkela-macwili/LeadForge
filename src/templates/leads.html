@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Leads - LeadForge{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-users"></i> Lead Database</h1>
+    <div class="user-badge">
+        <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
+        {% if user.subscription_tier == 'Free' %}
+        <span class="limit-info"><i class="fas fa-info-circle"></i> Viewing up to 5 leads</span>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Search and Filter Bar -->
+<div class="filter-bar">
+    <form method="GET" action="{{ url_for('ui.leads') }}" class="filter-form">
+        <div class="filter-group">
+            <i class="fas fa-search"></i>
+            <input type="text" name="search" placeholder="Search by name, email, company..."
+                value="{{ search_query or '' }}">
+        </div>
+        <div class="filter-group">
+            <i class="fas fa-filter"></i>
+            <select name="niche">
+                <option value="">All Niches</option>
+                {% for niche in niches %}
+                <option value="{{ niche }}" {% if current_niche==niche %}selected{% endif %}>{{ niche }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i> Apply
+        </button>
+        <a href="{{ url_for('ui.leads') }}" class="btn btn-secondary">
+            <i class="fas fa-times"></i> Clear
+        </a>
+        <a href="{{ url_for('ui.download_leads', niche=current_niche or '', search=search_query or '') }}"
+            class="btn btn-success">
+            <i class="fas fa-download"></i> Download CSV
+        </a>
+    </form>
+</div>
+
+<div class="leads-table-container">
+    <table class="leads-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Niche</th>
+                <th>Location</th>
+                <th>Date Added</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lead in leads %}
+            <tr>
+                <td>{{ lead.first_name }} {{ lead.last_name }}</td>
+                <td>{{ lead.email }}</td>
+                <td>{{ lead.phone }}</td>
+                <td>{{ lead.company or 'N/A' }}</td>
+                <td><span class="niche-badge">{{ lead.niche }}</span></td>
+                <td>{{ lead.location }}</td>
+                <td>{{ lead.date_added.strftime('%Y-%m-%d %H:%M') if lead.date_added else 'N/A' }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7" class="no-data">No leads found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="table-footer">
+    <p>Showing {{ leads|length }} lead(s)</p>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Login - LeadForge{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-card">
+        <div class="login-header">
+            <i class="fas fa-rocket logo-icon"></i>
+            <h1>LeadForge</h1>
+            <p>Automated Lead Generation Platform</p>
+        </div>
+
+        <form method="POST" class="login-form">
+            <div class="form-group">
+                <label for="email">
+                    <i class="fas fa-envelope"></i> Email
+                </label>
+                <input type="email" id="email" name="email" value="admin@leadforge.com" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="password">
+                    <i class="fas fa-lock"></i> Password
+                </label>
+                <input type="password" id="password" name="password" value="admin" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+                <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+        </form>
+
+        <div class="demo-accounts">
+            <h4>Demo Accounts</h4>
+            <div class="account-info">
+                <strong>Admin (Enterprise):</strong> admin@leadforge.com / admin
+            </div>
+            <div class="account-info">
+                <strong>Free Tier:</strong> free@test.com / test123
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
