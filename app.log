@@ -392,3 +392,30 @@
 2025-11-28 09:05:43,650 - LeadForge - INFO - Service Provider collection complete. Collected 5 leads.
 2025-11-28 09:05:43,655 - LeadForge - INFO - Processed 5 leads.
 2025-11-28 09:05:43,663 - LeadForge - INFO - All niches processed.
+2025-11-28 10:03:31,272 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:04:45,913 - LeadForge - INFO - Starting background task for Real Estate
+2025-11-28 10:04:45,913 - LeadForge - INFO - Starting Real Estate collection... Target: 20
+2025-11-28 10:04:46,541 - LeadForge - INFO - Saved new lead: agent0@remax.co.za
+2025-11-28 10:04:47,784 - LeadForge - INFO - Saved new lead: agent1@pamgolding.co.za
+2025-11-28 10:04:48,972 - LeadForge - INFO - Saved new lead: agent2@remax.co.za
+2025-11-28 10:04:50,315 - LeadForge - INFO - Saved new lead: agent3@remax.co.za
+2025-11-28 10:04:50,899 - LeadForge - INFO - Saved new lead: agent4@seeff.co.za
+2025-11-28 10:04:52,210 - LeadForge - INFO - Saved new lead: agent5@pamgolding.co.za
+2025-11-28 10:04:52,738 - LeadForge - INFO - Saved new lead: agent6@pamgolding.co.za
+2025-11-28 10:04:53,733 - LeadForge - INFO - Saved new lead: agent7@rawson.co.za
+2025-11-28 10:04:55,224 - LeadForge - INFO - Saved new lead: agent8@remax.co.za
+2025-11-28 10:04:56,515 - LeadForge - INFO - Saved new lead: agent9@pamgolding.co.za
+2025-11-28 10:04:57,226 - LeadForge - INFO - Saved new lead: agent10@rawson.co.za
+2025-11-28 10:04:58,430 - LeadForge - INFO - Saved new lead: agent11@pamgolding.co.za
+2025-11-28 10:04:59,406 - LeadForge - INFO - Saved new lead: agent12@rawson.co.za
+2025-11-28 10:05:00,383 - LeadForge - INFO - Saved new lead: agent13@remax.co.za
+2025-11-28 10:05:01,896 - LeadForge - INFO - Saved new lead: agent14@rawson.co.za
+2025-11-28 10:05:03,306 - LeadForge - INFO - Saved new lead: agent15@rawson.co.za
+2025-11-28 10:05:04,812 - LeadForge - INFO - Saved new lead: agent16@pamgolding.co.za
+2025-11-28 10:05:06,165 - LeadForge - INFO - Saved new lead: agent17@rawson.co.za
+2025-11-28 10:05:07,055 - LeadForge - INFO - Saved new lead: agent18@pamgolding.co.za
+2025-11-28 10:05:08,141 - LeadForge - INFO - Saved new lead: agent19@seeff.co.za
+2025-11-28 10:05:08,141 - LeadForge - INFO - Real Estate collection complete. Collected 20 leads.
+2025-11-28 10:05:08,141 - LeadForge - INFO - Background task for Real Estate completed
+2025-11-28 10:08:57,989 - LeadForge - INFO - Database initialized and default admin created
+2025-11-28 10:19:41,408 - LeadForge - INFO - Database initialized and default admin created

@@ -1,23 +1,34 @@
 import pandas as pd
 import re
+from enrichment.google_places import GooglePlacesEnricher
 
 class DataProcessor:
-    def __init__(self, data):
-        self.df = pd.DataFrame(data)
+    def __init__(self, raw_data):
+        self.raw_data = raw_data
+        self.df = pd.DataFrame(raw_data)
+        self.enricher = GooglePlacesEnricher()
 
     def clean_data(self):
         """
-        Cleans and validates the data.
+        Basic cleaning: remove duplicates, handle missing values.
         """
         if self.df.empty:
             return self.df
-
-        # Remove duplicates based on phone or email
-        self.df.drop_duplicates(subset=['phone'], keep='first', inplace=True)
+            
+        # Remove duplicates based on email
         self.df.drop_duplicates(subset=['email'], keep='first', inplace=True)
+        
+        # Fill missing values
+        self.df.fillna("N/A", inplace=True)
 
         # Basic validation (e.g., ensure phone number has digits)
         self.df = self.df[self.df['phone'].apply(self._is_valid_phone)]
+        
+        # Enrichment Step
+        # Apply enrichment to each row (convert to dict, enrich, update df)
+        # Note: In a real scenario with API calls, we'd batch this or run async
+        enriched_data = [self.enricher.enrich(row.to_dict()) for _, row in self.df.iterrows()]
+        self.df = pd.DataFrame(enriched_data)
         
         return self.df
 

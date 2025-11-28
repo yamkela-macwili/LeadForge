@@ -36,6 +36,17 @@ class Lead(Base):
             'date_added': self.date_added
         }
 
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True)
+    email = Column(String, unique=True, index=True)
+    hashed_password = Column(String)
+    is_active = Column(Integer, default=1)  # SQLite uses 1/0 for boolean
+    is_superuser = Column(Integer, default=0)
+    subscription_tier = Column(String, default="Free")  # Free, Pro, Enterprise
+    api_key = Column(String, unique=True, index=True, nullable=True)
+
 class Source(Base):
     __tablename__ = 'sources'
 
