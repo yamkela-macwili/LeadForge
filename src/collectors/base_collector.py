@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import pandas as pd
-import time
+import asyncio
 import random
 from sqlalchemy.orm import Session
 from database import Lead
@@ -13,7 +13,7 @@ class BaseCollector(ABC):
         self.db_session = db_session
 
     @abstractmethod
-    def collect(self):
+    async def collect(self):
         """
         Main method to execute the collection process.
         Should populate self.data with dictionaries.
@@ -76,8 +76,8 @@ class BaseCollector(ABC):
         df.to_csv(filename, index=False)
         logger.info(f"Data saved to {filename}")
 
-    def random_delay(self, min_seconds=1, max_seconds=3):
+    async def random_delay(self, min_seconds=1, max_seconds=3):
         """
         Sleeps for a random amount of time to avoid rate limiting.
         """
-        time.sleep(random.uniform(min_seconds, max_seconds))
+        await asyncio.sleep(random.uniform(min_seconds, max_seconds))

@@ -13,3 +13,5 @@ numpy
 python-dotenv
 schedule
 SQLAlchemy
+fastapi
+uvicorn

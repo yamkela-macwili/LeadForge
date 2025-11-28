@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: leadforge-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./leads.db:/app/leads.db
+      - ./app.log:/app/app.log
+      - ./reports:/app/reports
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
