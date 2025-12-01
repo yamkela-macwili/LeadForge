@@ -463,3 +463,71 @@
 2025-11-28 11:12:37,764 - LeadForge - INFO - Saved new lead: agent19@pamgolding.co.za
 2025-11-28 11:12:37,765 - LeadForge - INFO - Real Estate collection complete. Collected 14 leads.
 2025-11-28 11:12:37,765 - LeadForge - INFO - Scraping completed for Real Estate
+2025-12-01 09:40:00,813 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:40:00,816 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:40:01,585 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:40:01,588 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:45:19,155 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:45:19,159 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:45:21,172 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:45:21,175 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:45:24,725 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:45:24,728 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:46:43,221 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:46:43,224 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:46:43,832 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 09:46:43,834 - LeadForge - INFO - Flask application initialized
+2025-12-01 09:50:18,023 - LeadForge - INFO - Starting scraping for Tutors
+2025-12-01 09:50:18,024 - LeadForge - INFO - Starting Tutor collection... Target: 20
+2025-12-01 09:50:18,767 - LeadForge - INFO - Saved new lead: tutor0@teachme.co.za
+2025-12-01 09:50:20,141 - LeadForge - INFO - Saved new lead: tutor1@teachme.co.za
+2025-12-01 09:50:21,559 - LeadForge - INFO - Saved new lead: tutor2@teachme.co.za
+2025-12-01 09:50:23,032 - LeadForge - INFO - Saved new lead: tutor3@teachme.co.za
+2025-12-01 09:50:23,974 - LeadForge - INFO - Saved new lead: tutor4@teachme.co.za
+2025-12-01 09:50:24,267 - LeadForge - INFO - Starting scraping for Service Providers
+2025-12-01 09:50:24,268 - LeadForge - INFO - Starting Service Provider collection... Target: 20
+2025-12-01 09:50:25,126 - LeadForge - INFO - Saved new lead: tutor5@teachme.co.za
+2025-12-01 09:50:25,334 - LeadForge - INFO - Saved new lead: contact@locksmith0.co.za
+2025-12-01 09:50:25,954 - LeadForge - INFO - Saved new lead: tutor6@teachme.co.za
+2025-12-01 09:50:26,806 - LeadForge - INFO - Saved new lead: tutor7@teachme.co.za
+2025-12-01 09:50:26,823 - LeadForge - INFO - Saved new lead: contact@plumber1.co.za
+2025-12-01 09:50:28,028 - LeadForge - INFO - Saved new lead: contact@plumber2.co.za
+2025-12-01 09:50:28,267 - LeadForge - INFO - Saved new lead: tutor8@teachme.co.za
+2025-12-01 09:50:28,916 - LeadForge - INFO - Saved new lead: tutor9@teachme.co.za
+2025-12-01 09:50:29,113 - LeadForge - INFO - Saved new lead: contact@electrician3.co.za
+2025-12-01 09:50:29,667 - LeadForge - INFO - Saved new lead: contact@electrician4.co.za
+2025-12-01 09:50:30,398 - LeadForge - INFO - Saved new lead: tutor10@teachme.co.za
+2025-12-01 09:50:30,476 - LeadForge - INFO - Saved new lead: contact@plumber5.co.za
+2025-12-01 09:50:31,440 - LeadForge - INFO - Saved new lead: tutor11@teachme.co.za
+2025-12-01 09:50:31,737 - LeadForge - INFO - Saved new lead: contact@electrician6.co.za
+2025-12-01 09:50:32,137 - LeadForge - INFO - Saved new lead: tutor12@teachme.co.za
+2025-12-01 09:50:32,887 - LeadForge - INFO - Saved new lead: contact@mechanic7.co.za
+2025-12-01 09:50:33,193 - LeadForge - INFO - Saved new lead: tutor13@teachme.co.za
+2025-12-01 09:50:33,796 - LeadForge - INFO - Saved new lead: tutor14@teachme.co.za
+2025-12-01 09:50:34,316 - LeadForge - INFO - Saved new lead: contact@electrician8.co.za
+2025-12-01 09:50:34,531 - LeadForge - INFO - Saved new lead: tutor15@teachme.co.za
+2025-12-01 09:50:35,064 - LeadForge - INFO - Saved new lead: contact@electrician9.co.za
+2025-12-01 09:50:35,459 - LeadForge - INFO - Saved new lead: tutor16@teachme.co.za
+2025-12-01 09:50:36,083 - LeadForge - INFO - Saved new lead: tutor17@teachme.co.za
+2025-12-01 09:50:36,542 - LeadForge - INFO - Saved new lead: contact@plumber10.co.za
+2025-12-01 09:50:37,067 - LeadForge - INFO - Saved new lead: tutor18@teachme.co.za
+2025-12-01 09:50:37,788 - LeadForge - INFO - Saved new lead: contact@electrician11.co.za
+2025-12-01 09:50:37,833 - LeadForge - INFO - Saved new lead: tutor19@teachme.co.za
+2025-12-01 09:50:37,833 - LeadForge - INFO - Tutor collection complete. Collected 20 leads.
+2025-12-01 09:50:37,833 - LeadForge - INFO - Scraping completed for Tutors
+2025-12-01 09:50:39,254 - LeadForge - INFO - Saved new lead: contact@locksmith12.co.za
+2025-12-01 09:50:40,170 - LeadForge - INFO - Saved new lead: contact@locksmith13.co.za
+2025-12-01 09:50:41,253 - LeadForge - INFO - Saved new lead: contact@plumber14.co.za
+2025-12-01 09:50:42,468 - LeadForge - INFO - Saved new lead: contact@locksmith15.co.za
+2025-12-01 09:50:43,115 - LeadForge - INFO - Saved new lead: contact@plumber16.co.za
+2025-12-01 09:50:44,497 - LeadForge - INFO - Saved new lead: contact@locksmith17.co.za
+2025-12-01 09:50:45,952 - LeadForge - INFO - Saved new lead: contact@electrician18.co.za
+2025-12-01 09:50:47,466 - LeadForge - INFO - Saved new lead: contact@mechanic19.co.za
+2025-12-01 09:50:47,466 - LeadForge - INFO - Service Provider collection complete. Collected 20 leads.
+2025-12-01 09:50:47,466 - LeadForge - INFO - Scraping completed for Service Providers
+2025-12-01 10:26:58,716 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 10:26:58,723 - LeadForge - INFO - Flask application initialized
+2025-12-01 10:28:59,120 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 10:28:59,122 - LeadForge - INFO - Flask application initialized
+2025-12-01 10:29:05,484 - LeadForge - INFO - Database initialized and default admin created
+2025-12-01 10:29:05,487 - LeadForge - INFO - Flask application initialized

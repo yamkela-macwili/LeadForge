@@ -17,7 +17,7 @@
     <div class="stat-card">
         <div class="stat-icon">
             <i
-                class="fas fa-{% if 'Real Estate' in niche %}home{% elif 'Tutor' in niche %}graduation-cap{% else %}briefcase{% endif %}"></i>
+                class="fas fa-{% if 'Real Estate' in niche %}home{% elif 'Tutor' in niche %}graduation-cap{% elif 'Service' in niche %}briefcase{% else %}chart-line{% endif %}"></i>
         </div>
         <div class="stat-info">
             <h3>{{ count }}</h3>
@@ -26,6 +26,7 @@
     </div>
     {% endfor %}
 </div>
+
 
 <div class="chart-container">
     <h2>Leads Distribution</h2>
@@ -37,6 +38,34 @@
 <script>
     const statsData = {{ stats| tojson }};
 
+    // Generate dynamic colors for all niches
+    function generateColors(count) {
+        const baseColors = [
+            { bg: 'rgba(139, 92, 246, 0.8)', border: 'rgba(139, 92, 246, 1)' },  // Purple
+            { bg: 'rgba(236, 72, 153, 0.8)', border: 'rgba(236, 72, 153, 1)' },  // Pink
+            { bg: 'rgba(34, 197, 94, 0.8)', border: 'rgba(34, 197, 94, 1)' },    // Green
+            { bg: 'rgba(59, 130, 246, 0.8)', border: 'rgba(59, 130, 246, 1)' },  // Blue
+            { bg: 'rgba(251, 146, 60, 0.8)', border: 'rgba(251, 146, 60, 1)' },  // Orange
+            { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgba(168, 85, 247, 1)' },  // Violet
+            { bg: 'rgba(14, 165, 233, 0.8)', border: 'rgba(14, 165, 233, 1)' },  // Sky
+            { bg: 'rgba(234, 88, 12, 0.8)', border: 'rgba(234, 88, 12, 1)' }     // Red-Orange
+        ];
+
+        const backgrounds = [];
+        const borders = [];
+
+        for (let i = 0; i < count; i++) {
+            const color = baseColors[i % baseColors.length];
+            backgrounds.push(color.bg);
+            borders.push(color.border);
+        }
+
+        return { backgrounds, borders };
+    }
+
+    const nicheCount = Object.keys(statsData).length;
+    const colors = generateColors(nicheCount);
+
     const ctx = document.getElementById('leadsChart').getContext('2d');
     new Chart(ctx, {
         type: 'bar',
@@ -45,16 +74,8 @@
             datasets: [{
                 label: 'Number of Leads',
                 data: Object.values(statsData),
-                backgroundColor: [
-                    'rgba(139, 92, 246, 0.8)',
-                    'rgba(236, 72, 153, 0.8)',
-                    'rgba(34, 197, 94, 0.8)'
-                ],
-                borderColor: [
-                    'rgba(139, 92, 246, 1)',
-                    'rgba(236, 72, 153, 1)',
-                    'rgba(34, 197, 94, 1)'
-                ],
+                backgroundColor: colors.backgrounds,
+                borderColor: colors.borders,
                 borderWidth: 2,
                 borderRadius: 8
             }]
