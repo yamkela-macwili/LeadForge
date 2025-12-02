@@ -531,3 +531,326 @@
 2025-12-01 10:28:59,122 - LeadForge - INFO - Flask application initialized
 2025-12-01 10:29:05,484 - LeadForge - INFO - Database initialized and default admin created
 2025-12-01 10:29:05,487 - LeadForge - INFO - Flask application initialized
+2025-12-02 08:55:55,104 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 08:55:55,107 - LeadForge - INFO - Flask application initialized
+2025-12-02 08:55:55,778 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 08:55:55,780 - LeadForge - INFO - Flask application initialized
+2025-12-02 08:56:50,565 - LeadForge - INFO - Starting scraping for Real Estate
+2025-12-02 08:56:50,565 - LeadForge - INFO - Starting Real Estate collection... Target: 20
+2025-12-02 08:56:51,193 - LeadForge - INFO - Lead already exists: agent0@seeff.co.za. Updating...
+2025-12-02 08:56:52,686 - LeadForge - INFO - Saved new lead: agent1@seeff.co.za
+2025-12-02 08:56:53,464 - LeadForge - INFO - Saved new lead: agent2@pamgolding.co.za
+2025-12-02 08:56:54,218 - LeadForge - INFO - Saved new lead: agent3@rawson.co.za
+2025-12-02 08:56:54,969 - LeadForge - INFO - Saved new lead: agent4@rawson.co.za
+2025-12-02 08:56:56,227 - LeadForge - INFO - Lead already exists: agent5@rawson.co.za. Updating...
+2025-12-02 08:56:57,123 - LeadForge - INFO - Saved new lead: agent6@seeff.co.za
+2025-12-02 08:56:58,086 - LeadForge - INFO - Lead already exists: agent7@rawson.co.za. Updating...
+2025-12-02 08:56:58,776 - LeadForge - INFO - Lead already exists: agent8@rawson.co.za. Updating...
+2025-12-02 08:56:59,798 - LeadForge - INFO - Saved new lead: agent9@seeff.co.za
+2025-12-02 08:57:01,278 - LeadForge - INFO - Saved new lead: agent10@pamgolding.co.za
+2025-12-02 08:57:02,691 - LeadForge - INFO - Saved new lead: agent11@seeff.co.za
+2025-12-02 08:57:03,506 - LeadForge - INFO - Lead already exists: agent12@rawson.co.za. Updating...
+2025-12-02 08:57:04,566 - LeadForge - INFO - Saved new lead: agent13@rawson.co.za
+2025-12-02 08:57:05,177 - LeadForge - INFO - Saved new lead: agent14@seeff.co.za
+2025-12-02 08:57:06,443 - LeadForge - INFO - Lead already exists: agent15@rawson.co.za. Updating...
+2025-12-02 08:57:07,638 - LeadForge - INFO - Saved new lead: agent16@rawson.co.za
+2025-12-02 08:57:08,142 - LeadForge - INFO - Lead already exists: agent17@pamgolding.co.za. Updating...
+2025-12-02 08:57:09,272 - LeadForge - INFO - Saved new lead: agent18@seeff.co.za
+2025-12-02 08:57:10,767 - LeadForge - INFO - Lead already exists: agent19@pamgolding.co.za. Updating...
+2025-12-02 08:57:10,767 - LeadForge - INFO - Real Estate collection complete. Collected 12 leads.
+2025-12-02 08:57:10,767 - LeadForge - INFO - Scraping completed for Real Estate
+2025-12-02 08:59:27,158 - LeadForge - INFO - Starting scraping for Tutors
+2025-12-02 08:59:27,159 - LeadForge - INFO - Starting Tutor collection... Target: 20
+2025-12-02 08:59:27,803 - LeadForge - INFO - Lead already exists: tutor0@teachme.co.za. Updating...
+2025-12-02 08:59:28,539 - LeadForge - INFO - Lead already exists: tutor1@teachme.co.za. Updating...
+2025-12-02 08:59:29,645 - LeadForge - INFO - Lead already exists: tutor2@teachme.co.za. Updating...
+2025-12-02 08:59:30,868 - LeadForge - INFO - Lead already exists: tutor3@teachme.co.za. Updating...
+2025-12-02 08:59:31,599 - LeadForge - INFO - Lead already exists: tutor4@teachme.co.za. Updating...
+2025-12-02 08:59:32,752 - LeadForge - INFO - Lead already exists: tutor5@teachme.co.za. Updating...
+2025-12-02 08:59:33,288 - LeadForge - INFO - Lead already exists: tutor6@teachme.co.za. Updating...
+2025-12-02 08:59:34,420 - LeadForge - INFO - Lead already exists: tutor7@teachme.co.za. Updating...
+2025-12-02 08:59:35,895 - LeadForge - INFO - Lead already exists: tutor8@teachme.co.za. Updating...
+2025-12-02 08:59:37,354 - LeadForge - INFO - Lead already exists: tutor9@teachme.co.za. Updating...
+2025-12-02 08:59:38,673 - LeadForge - INFO - Lead already exists: tutor10@teachme.co.za. Updating...
+2025-12-02 08:59:40,116 - LeadForge - INFO - Lead already exists: tutor11@teachme.co.za. Updating...
+2025-12-02 08:59:41,005 - LeadForge - INFO - Lead already exists: tutor12@teachme.co.za. Updating...
+2025-12-02 08:59:42,101 - LeadForge - INFO - Lead already exists: tutor13@teachme.co.za. Updating...
+2025-12-02 08:59:43,471 - LeadForge - INFO - Lead already exists: tutor14@teachme.co.za. Updating...
+2025-12-02 08:59:44,855 - LeadForge - INFO - Lead already exists: tutor15@teachme.co.za. Updating...
+2025-12-02 08:59:45,753 - LeadForge - INFO - Lead already exists: tutor16@teachme.co.za. Updating...
+2025-12-02 08:59:46,273 - LeadForge - INFO - Lead already exists: tutor17@teachme.co.za. Updating...
+2025-12-02 08:59:47,006 - LeadForge - INFO - Lead already exists: tutor18@teachme.co.za. Updating...
+2025-12-02 08:59:47,807 - LeadForge - INFO - Lead already exists: tutor19@teachme.co.za. Updating...
+2025-12-02 08:59:47,807 - LeadForge - INFO - Tutor collection complete. Collected 0 leads.
+2025-12-02 08:59:47,807 - LeadForge - INFO - Scraping completed for Tutors
+2025-12-02 09:29:05,835 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:29:05,838 - LeadForge - INFO - Flask application initialized
+2025-12-02 09:29:06,549 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:29:06,553 - LeadForge - INFO - Flask application initialized
+2025-12-02 09:31:00,336 - LeadForge - INFO - Starting scraping for Real Estate
+2025-12-02 09:31:00,336 - LeadForge - INFO - Starting Real Estate collection... Target: 20
+2025-12-02 09:34:59,342 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:34:59,345 - LeadForge - INFO - Flask application initialized
+2025-12-02 09:35:32,303 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:35:32,306 - LeadForge - INFO - Flask application initialized
+2025-12-02 09:35:57,185 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:35:57,189 - LeadForge - INFO - Flask application initialized
+2025-12-02 09:35:57,753 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:35:57,757 - LeadForge - INFO - Flask application initialized
+2025-12-02 09:36:20,161 - LeadForge - INFO - Starting scraping for Real Estate
+2025-12-02 09:36:20,161 - LeadForge - INFO - Starting Real Estate collection... Target: 20
+2025-12-02 09:36:20,841 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:20,858 - LeadForge - INFO - Saved new lead: agent0@rawson.co.za
+2025-12-02 09:36:21,547 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:21,563 - LeadForge - INFO - Saved new lead: agent1@seeff.co.za
+2025-12-02 09:36:22,128 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:22,143 - LeadForge - INFO - Saved new lead: agent2@remax.co.za
+2025-12-02 09:36:23,197 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:23,212 - LeadForge - INFO - Saved new lead: agent3@rawson.co.za
+2025-12-02 09:36:23,993 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:24,006 - LeadForge - INFO - Saved new lead: agent4@seeff.co.za
+2025-12-02 09:36:24,949 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:24,969 - LeadForge - INFO - Saved new lead: agent5@pamgolding.co.za
+2025-12-02 09:36:25,475 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:25,490 - LeadForge - INFO - Saved new lead: agent6@seeff.co.za
+2025-12-02 09:36:26,314 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:26,327 - LeadForge - INFO - Saved new lead: agent7@pamgolding.co.za
+2025-12-02 09:36:27,649 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:27,664 - LeadForge - INFO - Saved new lead: agent8@seeff.co.za
+2025-12-02 09:36:28,973 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:28,993 - LeadForge - INFO - Saved new lead: agent9@rawson.co.za
+2025-12-02 09:36:29,690 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:29,709 - LeadForge - INFO - Saved new lead: agent10@remax.co.za
+2025-12-02 09:36:31,097 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:31,117 - LeadForge - INFO - Saved new lead: agent11@pamgolding.co.za
+2025-12-02 09:36:31,778 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:31,790 - LeadForge - INFO - Saved new lead: agent12@rawson.co.za
+2025-12-02 09:36:32,661 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:32,681 - LeadForge - INFO - Saved new lead: agent13@seeff.co.za
+2025-12-02 09:36:33,507 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:33,521 - LeadForge - INFO - Saved new lead: agent14@rawson.co.za
+2025-12-02 09:36:34,521 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:34,536 - LeadForge - INFO - Saved new lead: agent15@rawson.co.za
+2025-12-02 09:36:35,723 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:35,737 - LeadForge - INFO - Saved new lead: agent16@pamgolding.co.za
+2025-12-02 09:36:37,002 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:37,017 - LeadForge - INFO - Saved new lead: agent17@pamgolding.co.za
+2025-12-02 09:36:38,492 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:38,501 - LeadForge - INFO - Saved new lead: agent18@pamgolding.co.za
+2025-12-02 09:36:39,608 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:36:39,624 - LeadForge - INFO - Saved new lead: agent19@pamgolding.co.za
+2025-12-02 09:36:39,624 - LeadForge - INFO - Real Estate collection complete. Collected 20 leads.
+2025-12-02 09:36:39,624 - LeadForge - INFO - Scraping completed for Real Estate
+2025-12-02 09:37:18,792 - LeadForge - INFO - Starting scraping for Tutors
+2025-12-02 09:37:18,792 - LeadForge - INFO - Starting Tutor collection... Target: 20
+2025-12-02 09:37:19,432 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:19,445 - LeadForge - INFO - Saved new lead: tutor0@teachme.co.za
+2025-12-02 09:37:20,421 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:20,436 - LeadForge - INFO - Saved new lead: tutor1@teachme.co.za
+2025-12-02 09:37:21,331 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:21,345 - LeadForge - INFO - Saved new lead: tutor2@teachme.co.za
+2025-12-02 09:37:22,316 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:22,331 - LeadForge - INFO - Saved new lead: tutor3@teachme.co.za
+2025-12-02 09:37:23,038 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:23,052 - LeadForge - INFO - Saved new lead: tutor4@teachme.co.za
+2025-12-02 09:37:24,393 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:24,409 - LeadForge - INFO - Saved new lead: tutor5@teachme.co.za
+2025-12-02 09:37:25,550 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:25,566 - LeadForge - INFO - Saved new lead: tutor6@teachme.co.za
+2025-12-02 09:37:26,308 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:26,327 - LeadForge - INFO - Saved new lead: tutor7@teachme.co.za
+2025-12-02 09:37:27,740 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:27,754 - LeadForge - INFO - Saved new lead: tutor8@teachme.co.za
+2025-12-02 09:37:28,503 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:28,525 - LeadForge - INFO - Saved new lead: tutor9@teachme.co.za
+2025-12-02 09:37:29,389 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:29,408 - LeadForge - INFO - Saved new lead: tutor10@teachme.co.za
+2025-12-02 09:37:30,565 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:30,578 - LeadForge - INFO - Saved new lead: tutor11@teachme.co.za
+2025-12-02 09:37:31,423 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:31,437 - LeadForge - INFO - Saved new lead: tutor12@teachme.co.za
+2025-12-02 09:37:32,261 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:32,281 - LeadForge - INFO - Saved new lead: tutor13@teachme.co.za
+2025-12-02 09:37:33,649 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:33,664 - LeadForge - INFO - Saved new lead: tutor14@teachme.co.za
+2025-12-02 09:37:35,106 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:35,125 - LeadForge - INFO - Saved new lead: tutor15@teachme.co.za
+2025-12-02 09:37:35,743 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:35,762 - LeadForge - INFO - Saved new lead: tutor16@teachme.co.za
+2025-12-02 09:37:36,746 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:36,761 - LeadForge - INFO - Saved new lead: tutor17@teachme.co.za
+2025-12-02 09:37:38,134 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:38,149 - LeadForge - INFO - Saved new lead: tutor18@teachme.co.za
+2025-12-02 09:37:39,372 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:37:39,392 - LeadForge - INFO - Saved new lead: tutor19@teachme.co.za
+2025-12-02 09:37:39,392 - LeadForge - INFO - Tutor collection complete. Collected 20 leads.
+2025-12-02 09:37:39,392 - LeadForge - INFO - Scraping completed for Tutors
+2025-12-02 09:46:27,650 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:46:50,149 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:46:50,184 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 09:46:50,184 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 09:46:51,151 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 09:46:51,170 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 09:46:51,170 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 09:46:59,033 - LeadForge - INFO - Client connected: SV8fircK0LJ44FMZAAAB
+2025-12-02 09:46:59,078 - LeadForge - INFO - Client SV8fircK0LJ44FMZAAAB joined dashboard
+2025-12-02 09:47:13,883 - LeadForge - INFO - Client SV8fircK0LJ44FMZAAAB left dashboard
+2025-12-02 09:47:13,885 - LeadForge - INFO - Client disconnected: SV8fircK0LJ44FMZAAAB
+2025-12-02 09:47:14,720 - LeadForge - INFO - Starting scraping for Service Providers
+2025-12-02 09:47:14,721 - LeadForge - INFO - Starting Service Provider collection... Target: 20
+2025-12-02 09:47:15,467 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:15,503 - LeadForge - INFO - Saved new lead: contact@plumber0.co.za
+2025-12-02 09:47:15,854 - LeadForge - INFO - Client connected: iM5AMTglTNqogP7HAAAD
+2025-12-02 09:47:15,898 - LeadForge - INFO - Client iM5AMTglTNqogP7HAAAD joined dashboard
+2025-12-02 09:47:16,915 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:16,931 - LeadForge - INFO - Saved new lead: contact@locksmith1.co.za
+2025-12-02 09:47:16,931 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:18,317 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:18,333 - LeadForge - INFO - Saved new lead: contact@plumber2.co.za
+2025-12-02 09:47:18,334 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:19,006 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:19,024 - LeadForge - INFO - Saved new lead: contact@locksmith3.co.za
+2025-12-02 09:47:19,025 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:19,966 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:19,988 - LeadForge - INFO - Saved new lead: contact@mechanic4.co.za
+2025-12-02 09:47:19,989 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:20,925 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:20,943 - LeadForge - INFO - Saved new lead: contact@plumber5.co.za
+2025-12-02 09:47:20,943 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:22,228 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:22,251 - LeadForge - INFO - Saved new lead: contact@mechanic6.co.za
+2025-12-02 09:47:22,252 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:23,099 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:23,119 - LeadForge - INFO - Saved new lead: contact@electrician7.co.za
+2025-12-02 09:47:23,120 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:24,112 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:24,132 - LeadForge - INFO - Saved new lead: contact@plumber8.co.za
+2025-12-02 09:47:24,133 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:25,217 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:25,239 - LeadForge - INFO - Saved new lead: contact@plumber9.co.za
+2025-12-02 09:47:25,240 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:26,061 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:26,075 - LeadForge - INFO - Saved new lead: contact@plumber10.co.za
+2025-12-02 09:47:26,076 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:26,634 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:26,652 - LeadForge - INFO - Saved new lead: contact@mechanic11.co.za
+2025-12-02 09:47:26,653 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:27,373 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:27,394 - LeadForge - INFO - Saved new lead: contact@electrician12.co.za
+2025-12-02 09:47:27,395 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:28,770 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:28,809 - LeadForge - INFO - Saved new lead: contact@electrician13.co.za
+2025-12-02 09:47:28,810 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:30,101 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:30,120 - LeadForge - INFO - Saved new lead: contact@electrician14.co.za
+2025-12-02 09:47:30,120 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:31,065 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:31,084 - LeadForge - INFO - Saved new lead: contact@electrician15.co.za
+2025-12-02 09:47:31,085 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:31,749 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:31,768 - LeadForge - INFO - Saved new lead: contact@plumber16.co.za
+2025-12-02 09:47:31,769 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:32,561 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:32,582 - LeadForge - INFO - Saved new lead: contact@mechanic17.co.za
+2025-12-02 09:47:32,582 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:33,220 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:33,235 - LeadForge - INFO - Saved new lead: contact@plumber18.co.za
+2025-12-02 09:47:33,235 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:34,674 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:34,692 - LeadForge - INFO - Saved new lead: contact@electrician19.co.za
+2025-12-02 09:47:34,693 - LeadForge - WARNING - Could not emit WebSocket event: Object of type datetime is not JSON serializable
+2025-12-02 09:47:34,693 - LeadForge - INFO - Service Provider collection complete. Collected 20 leads.
+2025-12-02 09:47:34,693 - LeadForge - INFO - Scraping completed for Service Providers
+2025-12-02 09:47:50,462 - LeadForge - INFO - Client disconnected: iM5AMTglTNqogP7HAAAD
+2025-12-02 09:47:50,462 - LeadForge - INFO - Client iM5AMTglTNqogP7HAAAD left dashboard
+2025-12-02 09:47:51,606 - LeadForge - INFO - Starting scraping for Service Providers
+2025-12-02 09:47:51,606 - LeadForge - INFO - Starting Service Provider collection... Target: 20
+2025-12-02 09:47:52,791 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:52,812 - LeadForge - INFO - Saved new lead: contact@locksmith0.co.za
+2025-12-02 09:47:54,033 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:54,053 - LeadForge - INFO - Saved new lead: contact@electrician1.co.za
+2025-12-02 09:47:55,542 - LeadForge - INFO - Lead already exists: contact@plumber2.co.za. Updating...
+2025-12-02 09:47:56,725 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:56,747 - LeadForge - INFO - Saved new lead: contact@plumber3.co.za
+2025-12-02 09:47:57,304 - LeadForge - INFO - Lead already exists: contact@mechanic4.co.za. Updating...
+2025-12-02 09:47:58,488 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:47:58,503 - LeadForge - INFO - Saved new lead: contact@locksmith5.co.za
+2025-12-02 09:47:59,594 - LeadForge - INFO - Lead already exists: contact@mechanic6.co.za. Updating...
+2025-12-02 09:48:00,757 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:00,778 - LeadForge - INFO - Saved new lead: contact@plumber7.co.za
+2025-12-02 09:48:01,467 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:01,481 - LeadForge - INFO - Saved new lead: contact@electrician8.co.za
+2025-12-02 09:48:01,992 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:02,006 - LeadForge - INFO - Saved new lead: contact@electrician9.co.za
+2025-12-02 09:48:03,505 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:03,526 - LeadForge - INFO - Saved new lead: contact@electrician10.co.za
+2025-12-02 09:48:04,051 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:04,065 - LeadForge - INFO - Saved new lead: contact@locksmith11.co.za
+2025-12-02 09:48:05,158 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:05,174 - LeadForge - INFO - Saved new lead: contact@locksmith12.co.za
+2025-12-02 09:48:06,392 - LeadForge - INFO - Lead already exists: contact@electrician13.co.za. Updating...
+2025-12-02 09:48:07,168 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:07,181 - LeadForge - INFO - Saved new lead: contact@plumber14.co.za
+2025-12-02 09:48:08,174 - LeadForge - INFO - Lead already exists: contact@electrician15.co.za. Updating...
+2025-12-02 09:48:09,581 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:09,663 - LeadForge - INFO - Saved new lead: contact@mechanic16.co.za
+2025-12-02 09:48:10,683 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:10,697 - LeadForge - INFO - Saved new lead: contact@electrician17.co.za
+2025-12-02 09:48:11,752 - LeadForge - INFO - Scored new lead: 49.00
+2025-12-02 09:48:11,767 - LeadForge - INFO - Saved new lead: contact@mechanic18.co.za
+2025-12-02 09:48:12,577 - LeadForge - INFO - Lead already exists: contact@electrician19.co.za. Updating...
+2025-12-02 09:48:12,577 - LeadForge - INFO - Service Provider collection complete. Collected 14 leads.
+2025-12-02 09:48:12,577 - LeadForge - INFO - Scraping completed for Service Providers
+2025-12-02 09:48:26,743 - LeadForge - INFO - Client connected: 4JLj5W2oTpQAN5YlAAAF
+2025-12-02 09:48:26,788 - LeadForge - INFO - Client 4JLj5W2oTpQAN5YlAAAF joined dashboard
+2025-12-02 09:49:24,518 - LeadForge - INFO - Client 4JLj5W2oTpQAN5YlAAAF left dashboard
+2025-12-02 09:49:24,519 - LeadForge - INFO - Client disconnected: 4JLj5W2oTpQAN5YlAAAF
+2025-12-02 12:01:29,375 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:01:29,391 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:01:29,391 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:01:30,447 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:01:30,465 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:01:30,465 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:01:38,358 - LeadForge - INFO - Client connected: PaMZfRGtb-aVn7ipAAAB
+2025-12-02 12:01:38,409 - LeadForge - INFO - Client PaMZfRGtb-aVn7ipAAAB joined dashboard
+2025-12-02 12:02:42,025 - LeadForge - INFO - Client connected: ccO58p4bmd_QUjSdAAAD
+2025-12-02 12:02:42,040 - LeadForge - INFO - Client ccO58p4bmd_QUjSdAAAD joined dashboard
+2025-12-02 12:05:53,593 - LeadForge - INFO - Client disconnected: ccO58p4bmd_QUjSdAAAD
+2025-12-02 12:05:53,594 - LeadForge - INFO - Client ccO58p4bmd_QUjSdAAAD left dashboard
+2025-12-02 12:06:02,451 - LeadForge - INFO - Client connected: mX4dMyazbXa2PcZ4AAAF
+2025-12-02 12:06:02,508 - LeadForge - INFO - Client mX4dMyazbXa2PcZ4AAAF joined dashboard
+2025-12-02 12:06:25,937 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:06:25,957 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:06:25,957 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:06:27,466 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:06:27,488 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:06:27,488 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:06:27,696 - LeadForge - INFO - Client connected: HcYF2y2y1ABHHr90AAAB
+2025-12-02 12:06:27,742 - LeadForge - INFO - Client HcYF2y2y1ABHHr90AAAB joined dashboard
+2025-12-02 12:09:06,811 - LeadForge - INFO - Client connected: Lp9XwICeoq32Nuw8AAAD
+2025-12-02 12:09:06,876 - LeadForge - INFO - Client Lp9XwICeoq32Nuw8AAAD joined dashboard
+2025-12-02 12:13:05,700 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:13:05,720 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:13:05,720 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:13:06,878 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:13:06,897 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:13:06,897 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:13:40,368 - LeadForge - INFO - Client connected: 5oHbOTwzjwo4w5okAAAB
+2025-12-02 12:13:40,422 - LeadForge - INFO - Client 5oHbOTwzjwo4w5okAAAB joined dashboard
+2025-12-02 12:17:03,748 - LeadForge - INFO - Client connected: runDk4DxdduLHboAAAAD
+2025-12-02 12:17:03,800 - LeadForge - INFO - Client runDk4DxdduLHboAAAAD joined dashboard
+2025-12-02 12:17:06,734 - LeadForge - INFO - Client runDk4DxdduLHboAAAAD left dashboard
+2025-12-02 12:17:06,737 - LeadForge - INFO - Client disconnected: runDk4DxdduLHboAAAAD
+2025-12-02 12:17:48,601 - LeadForge - INFO - Client connected: oxXORx__wYu32xLUAAAF
+2025-12-02 12:17:48,660 - LeadForge - INFO - Client oxXORx__wYu32xLUAAAF joined dashboard
+2025-12-02 12:17:52,032 - LeadForge - INFO - Client disconnected: oxXORx__wYu32xLUAAAF
+2025-12-02 12:17:52,032 - LeadForge - INFO - Client oxXORx__wYu32xLUAAAF left dashboard
+2025-12-02 12:20:30,172 - LeadForge - INFO - Database initialized and default admin created
+2025-12-02 12:20:30,190 - LeadForge - INFO - WebSocket server initialized
+2025-12-02 12:20:30,190 - LeadForge - INFO - Flask application initialized with WebSocket support
+2025-12-02 12:20:30,360 - LeadForge - INFO - Client connected: Mrq6qbzvqAlVx1h3AAAB
+2025-12-02 12:20:30,410 - LeadForge - INFO - Client Mrq6qbzvqAlVx1h3AAAB joined dashboard
+2025-12-02 12:20:52,819 - LeadForge - INFO - Client disconnected: Mrq6qbzvqAlVx1h3AAAB
+2025-12-02 12:20:52,820 - LeadForge - INFO - Client Mrq6qbzvqAlVx1h3AAAB left dashboard
+2025-12-02 12:21:42,538 - LeadForge - INFO - Client connected: zzEKZhqgPN6f7IhNAAAD
+2025-12-02 12:21:42,603 - LeadForge - INFO - Client zzEKZhqgPN6f7IhNAAAD joined dashboard

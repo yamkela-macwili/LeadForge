@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="description" content="AI-Powered Lead Generation & Scoring Platform">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/icon-192.png') }}">
+
     <title>{% block title %}LeadForge{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/realtime.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -31,6 +38,10 @@
                 </a>
                 <a href="{{ url_for('ui.logs') }}" class="{% if request.endpoint == 'ui.logs' %}active{% endif %}">
                     <i class="fas fa-file-alt"></i> Logs
+                </a>
+                <a href="{{ url_for('ui.marketplace') }}"
+                    class="{% if request.endpoint == 'ui.marketplace' %}active{% endif %}">
+                    <i class="fas fa-store"></i> Marketplace
                 </a>
                 <a href="{{ url_for('ui.logout') }}" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i> Logout
@@ -59,7 +70,27 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Phase 1: Socket.IO for real-time updates -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/websocket-client.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/recommendations.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register("{{ url_for('static', filename='service-worker.js') }}")
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+
     {% block scripts %}{% endblock %}
 </body>
 

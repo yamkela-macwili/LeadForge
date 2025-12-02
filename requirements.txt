@@ -23,3 +23,15 @@ plotly
 python-jose[cryptography]
 bcrypt
 python-multipart
+
+# ML & Data Science (Phase 1)
+scikit-learn>=1.4.0
+scipy>=1.11.2
+
+# Real-time Communication (Phase 1)
+flask-socketio==5.3.4
+python-socketio==5.9.0
+eventlet==0.33.3
+
+# Additional utilities
+python-dateutil==2.8.2

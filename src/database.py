@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey, Float, JSON
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from datetime import datetime
 
@@ -19,6 +19,11 @@ class Lead(Base):
     url = Column(String)
     location = Column(String)
     date_added = Column(DateTime, default=datetime.utcnow)
+    
+    # ML Lead Scoring fields (Phase 1)
+    lead_score = Column(Float, default=0.0)  # ML-generated quality score (0-100)
+    score_features = Column(JSON, nullable=True)  # Feature breakdown for transparency
+    score_updated_at = Column(DateTime, nullable=True)  # Last scoring timestamp
 
     def to_dict(self):
         return {
@@ -33,7 +38,10 @@ class Lead(Base):
             'source': self.source,
             'url': self.url,
             'location': self.location,
-            'date_added': self.date_added
+            'date_added': self.date_added,
+            'lead_score': self.lead_score,
+            'score_features': self.score_features,
+            'score_updated_at': self.score_updated_at
         }
 
 class User(Base):
@@ -46,6 +54,22 @@ class User(Base):
     is_superuser = Column(Integer, default=0)
     subscription_tier = Column(String, default="Free")  # Free, Pro, Enterprise
     api_key = Column(String, unique=True, index=True, nullable=True)
+    credits = Column(Integer, default=0)  # Marketplace credits
+    
+    transactions = relationship("Transaction", back_populates="user")
+
+class Transaction(Base):
+    __tablename__ = 'transactions'
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    amount = Column(Float)  # Cost in USD
+    credits = Column(Integer)  # Credits purchased
+    package_name = Column(String)
+    status = Column(String, default='completed')  # pending, completed, failed
+    created_at = Column(DateTime, default=datetime.utcnow)
+    
+    user = relationship("User", back_populates="transactions")
 
 class Source(Base):
     __tablename__ = 'sources'

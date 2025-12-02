@@ -190,6 +190,19 @@ def scraper():
     finally:
         db.close()
 
+@ui_bp.route('/marketplace')
+@jwt_required()
+def marketplace():
+    """Marketplace page."""
+    current_user_email = get_jwt_identity()
+    
+    db = next(get_db())
+    try:
+        user = db.query(User).filter(User.email == current_user_email).first()
+        return render_template('marketplace.html', user=user)
+    finally:
+        db.close()
+
 @ui_bp.route('/logout')
 def logout():
     """Logout and clear cookies."""

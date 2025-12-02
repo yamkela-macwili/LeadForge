@@ -3,106 +3,138 @@
 {% block title %}Dashboard - LeadForge{% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h1><i class="fas fa-chart-line"></i> Dashboard Overview</h1>
-    <div class="user-badge">
-        <i class="fas fa-user-circle"></i>
-        <span>{{ user.email }}</span>
-        <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
-    </div>
-</div>
 
-<div class="stats-grid">
-    {% for niche, count in stats.items() %}
-    <div class="stat-card">
-        <div class="stat-icon">
-            <i
-                class="fas fa-{% if 'Real Estate' in niche %}home{% elif 'Tutor' in niche %}graduation-cap{% elif 'Service' in niche %}briefcase{% else %}chart-line{% endif %}"></i>
-        </div>
-        <div class="stat-info">
-            <h3>{{ count }}</h3>
-            <p>{{ niche }}</p>
+<body class="dashboard-page">
+    <div class="page-header">
+        <h1><i class="fas fa-chart-line"></i> Dashboard Overview</h1>
+        <div class="user-badge">
+            <i class="fas fa-user-circle"></i>
+            <span>{{ user.email }}</span>
+            <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
+            <!-- Phase 1: Real-time connection status -->
+            <div id="connection-status" class="connection-status disconnected">
+                <i class="fas fa-circle"></i> Connecting...
+            </div>
         </div>
     </div>
-    {% endfor %}
-</div>
 
+    <div class="stats-grid">
+        {% for niche, count in stats.items() %}
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i
+                    class="fas fa-{% if 'Real Estate' in niche %}home{% elif 'Tutor' in niche %}graduation-cap{% elif 'Service' in niche %}briefcase{% else %}chart-line{% endif %}"></i>
+            </div>
+            <div class="stat-info">
+                <h3>{{ count }}</h3>
+                <p>{{ niche }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
-<div class="chart-container">
-    <h2>Leads Distribution</h2>
-    <canvas id="leadsChart"></canvas>
-</div>
-{% endblock %}
+    <!-- Phase 1: Live Feed Component -->
+    <div class="live-feed-container">
+        <h2><i class="fas fa-stream"></i> Live Lead Feed</h2>
+        <div id="live-feed" class="live-feed">
+            <div class="live-feed-placeholder">
+                <i class="fas fa-satellite-dish"></i>
+                <p>Waiting for new leads...</p>
+            </div>
+        </div>
+    </div>
 
-{% block scripts %}
-<script>
-    const statsData = {{ stats| tojson }};
+    <!-- Phase 1: Recommendations & Trending -->
+    <div class="recommendations-grid">
+        <div class="recommendation-card">
+            <h2><i class="fas fa-fire"></i> Trending Niches</h2>
+            <div id="trending-niches" class="trending-list">
+                <div class="loading-placeholder">Loading trends...</div>
+            </div>
+        </div>
+        <div class="recommendation-card">
+            <h2><i class="fas fa-star"></i> Recommended for You</h2>
+            <div id="recommended-leads" class="recommended-list">
+                <div class="loading-placeholder">Loading recommendations...</div>
+            </div>
+        </div>
+    </div>
 
-    // Generate dynamic colors for all niches
-    function generateColors(count) {
-        const baseColors = [
-            { bg: 'rgba(139, 92, 246, 0.8)', border: 'rgba(139, 92, 246, 1)' },  // Purple
-            { bg: 'rgba(236, 72, 153, 0.8)', border: 'rgba(236, 72, 153, 1)' },  // Pink
-            { bg: 'rgba(34, 197, 94, 0.8)', border: 'rgba(34, 197, 94, 1)' },    // Green
-            { bg: 'rgba(59, 130, 246, 0.8)', border: 'rgba(59, 130, 246, 1)' },  // Blue
-            { bg: 'rgba(251, 146, 60, 0.8)', border: 'rgba(251, 146, 60, 1)' },  // Orange
-            { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgba(168, 85, 247, 1)' },  // Violet
-            { bg: 'rgba(14, 165, 233, 0.8)', border: 'rgba(14, 165, 233, 1)' },  // Sky
-            { bg: 'rgba(234, 88, 12, 0.8)', border: 'rgba(234, 88, 12, 1)' }     // Red-Orange
-        ];
+    <div class="chart-container">
+        <h2>Leads Distribution</h2>
+        <canvas id="leadsChart"></canvas>
+    </div>
+    {% endblock %}
 
-        const backgrounds = [];
-        const borders = [];
+    {% block scripts %}
+    <script>
+        const statsData = {{ stats| tojson }};
 
-        for (let i = 0; i < count; i++) {
-            const color = baseColors[i % baseColors.length];
-            backgrounds.push(color.bg);
-            borders.push(color.border);
+        // Generate dynamic colors for all niches
+        function generateColors(count) {
+            const baseColors = [
+                { bg: 'rgba(139, 92, 246, 0.8)', border: 'rgba(139, 92, 246, 1)' },  // Purple
+                { bg: 'rgba(236, 72, 153, 0.8)', border: 'rgba(236, 72, 153, 1)' },  // Pink
+                { bg: 'rgba(34, 197, 94, 0.8)', border: 'rgba(34, 197, 94, 1)' },    // Green
+                { bg: 'rgba(59, 130, 246, 0.8)', border: 'rgba(59, 130, 246, 1)' },  // Blue
+                { bg: 'rgba(251, 146, 60, 0.8)', border: 'rgba(251, 146, 60, 1)' },  // Orange
+                { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgba(168, 85, 247, 1)' },  // Violet
+                { bg: 'rgba(14, 165, 233, 0.8)', border: 'rgba(14, 165, 233, 1)' },  // Sky
+                { bg: 'rgba(234, 88, 12, 0.8)', border: 'rgba(234, 88, 12, 1)' }     // Red-Orange
+            ];
+
+            const backgrounds = [];
+            const borders = [];
+
+            for (let i = 0; i < count; i++) {
+                const color = baseColors[i % baseColors.length];
+                backgrounds.push(color.bg);
+                borders.push(color.border);
+            }
+
+            return { backgrounds, borders };
         }
 
-        return { backgrounds, borders };
-    }
+        const nicheCount = Object.keys(statsData).length;
+        const colors = generateColors(nicheCount);
 
-    const nicheCount = Object.keys(statsData).length;
-    const colors = generateColors(nicheCount);
-
-    const ctx = document.getElementById('leadsChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: Object.keys(statsData),
-            datasets: [{
-                label: 'Number of Leads',
-                data: Object.values(statsData),
-                backgroundColor: colors.backgrounds,
-                borderColor: colors.borders,
-                borderWidth: 2,
-                borderRadius: 8
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: '#e5e7eb',
-                        font: { size: 14 }
+        const ctx = document.getElementById('leadsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(statsData),
+                datasets: [{
+                    label: 'Number of Leads',
+                    data: Object.values(statsData),
+                    backgroundColor: colors.backgrounds,
+                    borderColor: colors.borders,
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#e5e7eb',
+                            font: { size: 14 }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(75, 85, 99, 0.2)' }
+                    },
+                    x: {
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(75, 85, 99, 0.2)' }
                     }
                 }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { color: '#9ca3af' },
-                    grid: { color: 'rgba(75, 85, 99, 0.2)' }
-                },
-                x: {
-                    ticks: { color: '#9ca3af' },
-                    grid: { color: 'rgba(75, 85, 99, 0.2)' }
-                }
             }
-        }
-    });
-</script>
-{% endblock %}
+        });
+    </script>
+    {% endblock %}

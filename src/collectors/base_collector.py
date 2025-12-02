@@ -24,6 +24,7 @@ class BaseCollector(ABC):
         """
         Saves a single lead to the database.
         Checks for duplicates based on email or phone.
+        Automatically scores the lead using ML.
         """
         if not self.db_session:
             logger.warning("No database session provided. Skipping DB save.")
@@ -55,11 +56,39 @@ class BaseCollector(ABC):
                 url=lead_data.get('url'),
                 location=lead_data.get('location')
             )
+            
+            # Phase 1: Automatically score the lead using ML
+            try:
+                from ml.lead_scorer import get_lead_scorer
+                from datetime import datetime
+                
+                scorer = get_lead_scorer()
+                score_result = scorer.score_lead(lead_data)
+                
+                new_lead.lead_score = score_result['score']
+                new_lead.score_features = score_result['features']
+                new_lead.score_updated_at = datetime.utcnow()
+                
+                logger.info(f"Scored new lead: {score_result['score']:.2f}")
+            except Exception as e:
+                logger.warning(f"Could not score lead: {e}")
+                new_lead.lead_score = 0.0
+            
             self.db_session.add(new_lead)
             try:
                 self.db_session.commit()
+                self.db_session.refresh(new_lead)  # Refresh to get the ID
                 logger.info(f"Saved new lead: {lead_data.get('email') or lead_data.get('phone')}")
                 self.data.append(lead_data) # Keep in memory for now for the report generator
+                
+                # Phase 1: Emit real-time WebSocket event for new lead
+                try:
+                    from websocket_server import emit_new_lead, emit_stats_update
+                    emit_new_lead(new_lead.to_dict())
+                    logger.debug(f"Emitted WebSocket event for new lead {new_lead.id}")
+                except Exception as e:
+                    logger.warning(f"Could not emit WebSocket event: {e}")
+                    
             except Exception as e:
                 self.db_session.rollback()
                 logger.error(f"Error saving lead: {e}")

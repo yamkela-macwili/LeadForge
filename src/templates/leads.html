@@ -53,6 +53,7 @@
                 <th>Company</th>
                 <th>Niche</th>
                 <th>Location</th>
+                <th>Quality Score</th>
                 <th>Date Added</th>
             </tr>
         </thead>
@@ -65,11 +66,21 @@
                 <td>{{ lead.company or 'N/A' }}</td>
                 <td><span class="niche-badge">{{ lead.niche }}</span></td>
                 <td>{{ lead.location }}</td>
+                <td>
+                    {% if lead.lead_score %}
+                    <span
+                        class="score-badge score-{{ 'excellent' if lead.lead_score >= 80 else 'good' if lead.lead_score >= 60 else 'fair' if lead.lead_score >= 40 else 'poor' }}">
+                        {{ "%.1f"|format(lead.lead_score) }}
+                    </span>
+                    {% else %}
+                    <span class="score-badge score-unknown">N/A</span>
+                    {% endif %}
+                </td>
                 <td>{{ lead.date_added.strftime('%Y-%m-%d %H:%M') if lead.date_added else 'N/A' }}</td>
             </tr>
             {% else %}
             <tr>
-                <td colspan="7" class="no-data">No leads found</td>
+                <td colspan="8" class="no-data">No leads found</td>
             </tr>
             {% endfor %}
         </tbody>

@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block title %}Marketplace - LeadForge{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-store"></i> Marketplace</h1>
+    <div class="user-badge">
+        <i class="fas fa-coins"></i>
+        <span id="user-credits">{{ user.credits }} Credits</span>
+        <span class="tier-badge tier-{{ user.subscription_tier.lower() }}">{{ user.subscription_tier }}</span>
+    </div>
+</div>
+
+<div class="marketplace-container">
+    <div class="packages-grid" id="packages-grid">
+        <!-- Packages will be loaded here -->
+        <div class="loading-placeholder">Loading packages...</div>
+    </div>
+
+    <div class="transaction-history">
+        <h2><i class="fas fa-history"></i> Transaction History</h2>
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Package</th>
+                        <th>Amount</th>
+                        <th>Credits</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <!-- History will be loaded here -->
+                    <tr>
+                        <td colspan="5" class="text-center">Loading history...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchPackages();
+        fetchHistory();
+    });
+
+    async function fetchPackages() {
+        try {
+            const response = await fetch('/api/marketplace/packages');
+            const data = await response.json();
+            renderPackages(data.packages);
+        } catch (error) {
+            console.error('Error fetching packages:', error);
+        }
+    }
+
+    function renderPackages(packages) {
+        const grid = document.getElementById('packages-grid');
+        grid.innerHTML = packages.map(pkg => `
+        <div class="package-card">
+            <div class="package-header">
+                <h3>${pkg.name}</h3>
+                <div class="package-price">$${pkg.price}</div>
+            </div>
+            <div class="package-credits">
+                <i class="fas fa-coins"></i> ${pkg.credits} Credits
+            </div>
+            <p class="package-desc">${pkg.description}</p>
+            <ul class="package-features">
+                ${pkg.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+            </ul>
+            <button onclick="purchasePackage('${pkg.id}')" class="btn btn-primary btn-block">
+                Purchase Now
+            </button>
+        </div>
+    `).join('');
+    }
+
+    async function purchasePackage(packageId) {
+        if (!confirm('Are you sure you want to purchase this package?')) return;
+
+        try {
+            const response = await fetch('/api/marketplace/purchase', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ package_id: packageId })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert('Purchase successful!');
+                document.getElementById('user-credits').textContent = `${data.new_credits} Credits`;
+                fetchHistory(); // Refresh history
+            } else {
+                alert(`Purchase failed: ${data.error}`);
+            }
+        } catch (error) {
+            console.error('Purchase error:', error);
+            alert('An error occurred during purchase');
+        }
+    }
+
+    async function fetchHistory() {
+        try {
+            const response = await fetch('/api/marketplace/history');
+            const data = await response.json();
+            renderHistory(data.history);
+        } catch (error) {
+            console.error('Error fetching history:', error);
+        }
+    }
+
+    function renderHistory(history) {
+        const tbody = document.getElementById('history-table-body');
+        if (history.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" class="text-center">No transactions yet</td></tr>';
+            return;
+        }
+
+        tbody.innerHTML = history.map(t => `
+        <tr>
+            <td>${new Date(t.date).toLocaleDateString()}</td>
+            <td>${t.package}</td>
+            <td>$${t.amount.toFixed(2)}</td>
+            <td>${t.credits}</td>
+            <td><span class="status-badge status-${t.status}">${t.status}</span></td>
+        </tr>
+    `).join('');
+    }
+</script>
+
+<style>
+    .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .package-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .package-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        border-color: var(--accent-purple);
+    }
+
+    .package-header h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .package-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent-purple);
+        margin-bottom: 1.5rem;
+    }
+
+    .package-credits {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+    }
+
+    .package-desc {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+    }
+
+    .package-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .package-features li {
+        margin-bottom: 0.5rem;
+        color: var(--text-secondary);
+    }
+
+    .package-features i {
+        color: var(--accent-green);
+        margin-right: 0.5rem;
+    }
+
+    .status-badge.status-completed {
+        background: rgba(34, 197, 94, 0.1);
+        color: var(--accent-green);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.85rem;
+    }
+</style>
+{% endblock %}
